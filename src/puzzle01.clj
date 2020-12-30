@@ -1,5 +1,5 @@
 
-(ns playgorund.aoc-2020.puzzle01
+(ns playground.aoc-2020.puzzle01
   (:require [clojure.java.io :as io]))
 
 
@@ -10,7 +10,10 @@
             299
             675
             1456])
-(io )
+
+(def input
+  (map #(Long/parseLong %)
+       (line-seq (io/reader(io/resource "input1.txt" )))))
 
 (set
  (for [x input
@@ -20,5 +23,9 @@
 
 ;;part two
 
-
-
+(set
+ (for [x input
+       y input
+       z input
+       :when (= 2020 (+ x y z))]
+   (* x y z)))
